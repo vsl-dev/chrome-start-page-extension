@@ -1,0 +1,14 @@
+{
+  "name": "Night Page",
+  "description": "New tab page with clock, alarm and more",
+  "version": "1.0.0",
+  "author": "vsldev.tk",
+  "incognito": "split",
+  "permissions": ["tabs", "storage", "bookmarks", "chrome://favicon/"],
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "icons": {},
+  "content_security_policy": "script-src 'self' https://fonts.googleapis.com ; object-src 'self'",
+  "manifest_version": 2
+}

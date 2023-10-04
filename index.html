@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Page</title>
+    <script src="./js/tailwindcss.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body
+    class="transition-all duration-200 bg-slate-950 text-slate-100 w-screen h-screen"
+  >
+    <div id="favoritesModal" class="hidden absolute w-full h-full z-50">
+      <div
+        id="favoritesModalBg"
+        class="absolute top-0 left-0 backdrop-blur-[35px] w-full h-full z-40"
+      ></div>
+      <div
+        style="
+          background: #dfe4eb5c;
+          transition: background-color 400ms, border-color 400ms;
+          box-shadow: 2px 2px 2px #0000001a;
+        "
+        class="absolute top-[50%] left-[50%] -translate-x-1/2 z-[65] -translate-y-1/2 w-[500px] rounded-[6px] items-center backdrop-blur-[3px] bg-[#ffffff0d] border-[#ffffff1a] border-[1px] border-solid px-4 py-6"
+      >
+        <h1 class="font-medium text-xl">Add new website</h1>
+        <form id="newFavForm" class="flex flex-col gap-2">
+          <label class="flex flex-col gap-1">
+            <p>Set title</p>
+            <input
+              name="title"
+              type="text"
+              class="w-full border-none outline-none rounded-md p-2 bg-slate-100 text-slate-950"
+              placeholder="google.com..."
+            />
+          </label>
+          <label class="flex flex-col gap-1">
+            <p>Set url</p>
+            <input
+              name="url"
+              type="text"
+              class="w-full border-none outline-none rounded-md p-2 bg-slate-100 text-slate-950"
+              placeholder="https://google.com/..."
+            />
+          </label>
+          <div class="flex flex-row justify-start">
+            <button
+              class="border-none outline-none rounded-md px-20 py-2 bg-slate-100 text-slate-950 font-medium"
+            >
+              Add
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div
+      id="searchBarSection"
+      class="absolute top-[10px] left-[10px] flex flex-col gap-3 z-30 w-1/2"
+    >
+      <div class="relative w-full">
+        <form id="searchForm">
+          <svg
+            class="absolute z-30 top-[50%] -translate-y-1/2 left-[5px]"
+            width="30px"
+            height="30px"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13.3891 13.3891L19 19M9.5 15C12.5376 15 15 12.5376 15 9.5C15 6.46243 12.5376 4 9.5 4C6.46243 4 4 6.46243 4 9.5C4 12.5376 6.46243 15 9.5 15Z"
+              stroke="#475569"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <input
+            style="
+              transition: background-color 400ms, border-color 400ms;
+              box-shadow: 2px 2px 2px #0000001a;
+            "
+            class="outline-none w-full rounded-[6px] items-center backdrop-blur-[3px] bg-[#ffffff0d] border-[#ffffff1a] border-[1px] border-solid inline-flex gap-[5px] py-[10px] px-[20px] pl-[40px] hover:bg-[#ffffff1a] hover:border-[#ffffff33] focus:bg-[#ffffff1a] focus:border-[#ffffff33]"
+            placeholder="Search in Google..."
+            type="text"
+          />
+        </form>
+      </div>
+
+      <div id="favListDiv" class="flex flex-row flex-wrap gap-2 w-4/6">
+        <button
+          id="addNewFavBtn"
+          style="
+            transition: background-color 400ms, border-color 400ms;
+            box-shadow: 2px 2px 2px #0000001a;
+          "
+          class="cursor-pointer w-[74px] h-[74px] rounded-[6px] items-center backdrop-blur-[3px] bg-[#ffffff0d] border-[#ffffff1a] border-[1px] border-solid relative hover:bg-[#ffffff1a] hover:border-[#ffffff33]"
+        >
+          <svg
+            width="43px"
+            height="43px"
+            viewBox="0 0 32 32"
+            class="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 p-1"
+          >
+            <g
+              stroke="none"
+              stroke-width="1"
+              fill="#cbd5e1"
+              fill-rule="evenodd"
+            >
+              <g
+                transform="translate(-362.000000, -1037.000000)"
+                fill="#cbd5e1"
+              >
+                <path
+                  d="M390,1049 L382,1049 L382,1041 C382,1038.79 380.209,1037 378,1037 C375.791,1037 374,1038.79 374,1041 L374,1049 L366,1049 C363.791,1049 362,1050.79 362,1053 C362,1055.21 363.791,1057 366,1057 L374,1057 L374,1065 C374,1067.21 375.791,1069 378,1069 C380.209,1069 382,1067.21 382,1065 L382,1057 L390,1057 C392.209,1057 394,1055.21 394,1053 C394,1050.79 392.209,1049 390,1049"
+                  id="plus"
+                ></path>
+              </g>
+            </g>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div>
+      <div
+        class="backdrop-blur-[150px] absolute top-0 left-0 w-full h-full z-10"
+      ></div>
+      <div
+        id="bubble"
+        class="transition-all duration-200 absolute rounded-full w-[300px] h-[300px] top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2"
+      ></div>
+      <div
+        class="bg-slate-800 transition-all duration-200 absolute rounded-full w-[300px] h-[370px] top-0 left-0"
+      ></div>
+      <div
+        class="bg-slate-800 transition-all duration-200 absolute rounded-full w-[300px] h-[370px] bottom-0 right-0"
+      ></div>
+
+      <div
+        id="sun"
+        class="opacity-[50%] absolute z-10 top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2"
+      >
+        <svg
+          width="400px"
+          height="400px"
+          viewBox="0 0 24 24"
+          fill="#fbbf24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M18 12C18 15.3137 15.3137 18 12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12Z"
+            fill="#fbbf24"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M12 1.25C12.4142 1.25 12.75 1.58579 12.75 2V3C12.75 3.41421 12.4142 3.75 12 3.75C11.5858 3.75 11.25 3.41421 11.25 3V2C11.25 1.58579 11.5858 1.25 12 1.25ZM4.39861 4.39861C4.6915 4.10572 5.16638 4.10572 5.45927 4.39861L5.85211 4.79145C6.145 5.08434 6.145 5.55921 5.85211 5.85211C5.55921 6.145 5.08434 6.145 4.79145 5.85211L4.39861 5.45927C4.10572 5.16638 4.10572 4.6915 4.39861 4.39861ZM19.6011 4.39887C19.894 4.69176 19.894 5.16664 19.6011 5.45953L19.2083 5.85237C18.9154 6.14526 18.4405 6.14526 18.1476 5.85237C17.8547 5.55947 17.8547 5.0846 18.1476 4.79171L18.5405 4.39887C18.8334 4.10598 19.3082 4.10598 19.6011 4.39887ZM1.25 12C1.25 11.5858 1.58579 11.25 2 11.25H3C3.41421 11.25 3.75 11.5858 3.75 12C3.75 12.4142 3.41421 12.75 3 12.75H2C1.58579 12.75 1.25 12.4142 1.25 12ZM20.25 12C20.25 11.5858 20.5858 11.25 21 11.25H22C22.4142 11.25 22.75 11.5858 22.75 12C22.75 12.4142 22.4142 12.75 22 12.75H21C20.5858 12.75 20.25 12.4142 20.25 12ZM18.1476 18.1476C18.4405 17.8547 18.9154 17.8547 19.2083 18.1476L19.6011 18.5405C19.894 18.8334 19.894 19.3082 19.6011 19.6011C19.3082 19.894 18.8334 19.894 18.5405 19.6011L18.1476 19.2083C17.8547 18.9154 17.8547 18.4405 18.1476 18.1476ZM5.85211 18.1479C6.145 18.4408 6.145 18.9157 5.85211 19.2086L5.45927 19.6014C5.16638 19.8943 4.6915 19.8943 4.39861 19.6014C4.10572 19.3085 4.10572 18.8336 4.39861 18.5407L4.79145 18.1479C5.08434 17.855 5.55921 17.855 5.85211 18.1479ZM12 20.25C12.4142 20.25 12.75 20.5858 12.75 21V22C12.75 22.4142 12.4142 22.75 12 22.75C11.5858 22.75 11.25 22.4142 11.25 22V21C11.25 20.5858 11.5858 20.25 12 20.25Z"
+            fill="#fbbf24"
+          />
+        </svg>
+      </div>
+
+      <div
+        id="moon"
+        class="opacity-[50%] absolute z-10 top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2"
+      >
+        <svg
+          width="400px"
+          height="400px"
+          viewBox="0 0 24 24"
+          fill="#a8a29e"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 22C17.5228 22 22 17.5228 22 12C22 11.5373 21.3065 11.4608 21.0672 11.8568C19.9289 13.7406 17.8615 15 15.5 15C11.9101 15 9 12.0899 9 8.5C9 6.13845 10.2594 4.07105 12.1432 2.93276C12.5392 2.69347 12.4627 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+            fill="#a8a29e"
+          />
+        </svg>
+      </div>
+
+      <div
+        class="absolute z-20 top-[50%] left-[50%]"
+        style="transform: translate(-50%, -50%)"
+      >
+        <h1 id="clock" class="select-none m-44 font-gugi flex flex-row gap-1">
+          <span id="hours" class="text-9xl">00</span>
+          <span id="dial" class="text-9xl">:</span>
+          <span id="minutes" class="text-9xl">00</span>
+          <span class="flex flex-col">
+            <span id="seconds" class="text-4xl">00</span>
+            <span id="milliseconds" class="text-sm">00</span>
+          </span>
+        </h1>
+      </div>
+    </div>
+
+    <div
+      id="badges"
+      class="fixed bottom-[10px] right-[10px] z-30 flex flex-row gap-1.5 items-center"
+    >
+      <div
+        id="badge-name"
+        style="
+          transition: background-color 400ms, border-color 400ms;
+          box-shadow: 2px 2px 2px #0000001a;
+        "
+        class="rounded-[6px] items-center backdrop-blur-[3px] bg-[#ffffff0d] border-[#ffffff1a] border-[1px] border-solid py-[10px] px-[20px]"
+      >
+        <p>Night Page</p>
+      </div>
+      <a href="https://github.com/vsl-dev" target="_blank">
+        <div
+          id="badge-github"
+          style="
+            transition: background-color 400ms, border-color 400ms;
+            box-shadow: 2px 2px 2px #0000001a;
+          "
+          class="rounded-[6px] items-center backdrop-blur-[3px] bg-[#ffffff0d] border-[#ffffff1a] border-[1px] border-solid p-[7.5px] hover:bg-[#ffffff1a] hover:border-[#ffffff33] cursor-pointer"
+        >
+          <img src="/resources/svgs/github.svg" width="24" height="24" />
+        </div>
+      </a>
+    </div>
+
+    <script src="./js/script.js"></script>
+    <noscript>
+      <h1>
+        If you see this error you need to enable JavaScript for this extension!
+      </h1>
+    </noscript>
+  </body>
+</html>
