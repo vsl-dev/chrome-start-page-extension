@@ -1,8 +1,8 @@
 {
   "name": "Night Page",
-  "description": "New tab page with clock, alarm and more",
+  "description": "New tab page with modern clock",
   "version": "1.0.0",
-  "author": "vsldev.tk",
+  "author": "github.com/vsl-dev",
   "incognito": "split",
   "permissions": ["tabs", "storage", "bookmarks", "chrome://favicon/"],
   "chrome_url_overrides": {
