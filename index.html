@@ -59,7 +59,11 @@
       class="absolute top-[10px] left-[10px] flex flex-col gap-3 z-30 w-1/2"
     >
       <div class="relative w-full">
-        <form id="searchForm">
+        <form
+          id="searchForm"
+          method="GET"
+          action="https://www.google.com/search"
+        >
           <svg
             class="absolute z-30 top-[50%] -translate-y-1/2 left-[5px]"
             width="30px"
@@ -77,6 +81,7 @@
             />
           </svg>
           <input
+            name="q"
             style="
               transition: background-color 400ms, border-color 400ms;
               box-shadow: 2px 2px 2px #0000001a;
