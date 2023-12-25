@@ -1,5 +1,10 @@
 # Start Page Extension
 
+# Update - 1.1
+
+- Added version number to badge
+- New updates will come? Maybe...
+
 ## Basic start page extension with modern and beautiful theme
 
 Why I dont share in chrome webstore?

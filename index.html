@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>New Page</title>
     <script src="./js/tailwindcss.min.js"></script>
-    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Gugi&display=swap");
+
+      .font-gugi {
+        font-family: "Gugi", cursive;
+      }
+    </style>
   </head>
   <body
     class="transition-all duration-200 bg-slate-950 text-slate-100 w-screen h-screen"
@@ -89,6 +95,7 @@
             class="outline-none w-full rounded-[6px] items-center backdrop-blur-[3px] bg-[#ffffff0d] border-[#ffffff1a] border-[1px] border-solid inline-flex gap-[5px] py-[10px] px-[20px] pl-[40px] hover:bg-[#ffffff1a] hover:border-[#ffffff33] focus:bg-[#ffffff1a] focus:border-[#ffffff33]"
             placeholder="Search in Google..."
             type="text"
+            autofocus
           />
         </form>
       </div>
@@ -214,7 +221,11 @@
         "
         class="rounded-[6px] items-center backdrop-blur-[3px] bg-[#ffffff0d] border-[#ffffff1a] border-[1px] border-solid py-[10px] px-[20px]"
       >
-        <p>Night Page</p>
+        <p>
+          <span>Night Page</span>
+          <span>-</span>
+          <span id="versionNumber"></span>
+        </p>
       </div>
       <a href="https://github.com/vsl-dev" target="_blank">
         <div

@@ -14,6 +14,9 @@ const newFavForm = document.getElementById("newFavForm");
 const searchForm = document.getElementById("searchForm");
 const favListDiv = document.getElementById("favListDiv");
 const addNewFavBtn = document.getElementById("addNewFavBtn");
+const versionNumber = document.getElementById("versionNumber");
+
+versionNumber.textContent = "v" + chrome.runtime.getManifest().version;
 
 const months = {
   0: "January",
@@ -120,6 +123,7 @@ const updateClock = (t) => {
     time.getMinutes() <= 9 ? "0" + time.getMinutes() : time.getMinutes();
   seconds.textContent =
     time.getSeconds() <= 9 ? "0" + time.getSeconds() : time.getSeconds();
+  milliseconds.textContent = time.getMilliseconds();
 
   const isDayTime = hours.textContent > 6 && hours.textContent < 19;
 
@@ -134,12 +138,7 @@ const updateClock = (t) => {
   }
 };
 
-setInterval(updateClock, 1000);
-
-setInterval(() => {
-  const time = new Date();
-  milliseconds.textContent = time.getMilliseconds();
-}, 1);
+setInterval(updateClock, 1);
 
 addNewFavBtn.onclick = () => {
   favoritesModal.classList.toggle("hidden");
