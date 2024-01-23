@@ -13,8 +13,8 @@ Why I dont share in chrome webstore?
 
 # Screenshoots
 
-![Alt text](/resources/screenshoots/ss1.png)
+![Alt text](/resources/screenshots/ss1.png)
 
-![Alt text](/resources/screenshoots/ss2.png)
+![Alt text](/resources/screenshots/ss2.png)
 
 ### Copright vsl-dev
